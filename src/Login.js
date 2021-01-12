@@ -1,6 +1,6 @@
 import React from 'react';
 import './Login.css';
-
+import { loginUrl } from './spotify';
 const Login = () => {
   return (
     <div className="login">
@@ -13,6 +13,9 @@ const Login = () => {
       </div>
       <div className="login__container">
         <div className="login__container-content">
+          <div className="text-center">
+            <h3>To continue, log in to Spotify</h3>
+          </div>
           <div className="row">
             <a
               style={{
@@ -55,6 +58,7 @@ const Login = () => {
           </div>
           <div className="row">
             <a
+              href="./"
               style={{
                 backgroundColor: '#fff',
                 color: '#333',
@@ -67,12 +71,13 @@ const Login = () => {
             </a>
           </div>
         </div>
-        <button
+        <a
+          href={loginUrl}
           style={{ backgroundColor: '#15883e', color: '#fff' }}
           className="btn-cta"
         >
           Log In
-        </button>
+        </a>
       </div>
     </div>
   );

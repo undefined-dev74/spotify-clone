@@ -23,6 +23,17 @@
   flex-direction: column;
 }
 
+.login__container-content > .text-center {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.login__container-content > .text-center > h3 {
+  letter-spacing: normal;
+  font-style: 16px;
+}
+
 .login__container-content > .row {
   display: flex;
   flex-direction: row;
@@ -42,8 +53,7 @@
   white-space: normal;
 }
 
-.login__container-content > .row > .btn,
-.btn-cta {
+.login__container-content > .row > .btn {
   min-width: 160px;
   border-radius: 500px;
   padding: 16px 48px 18px;
@@ -60,12 +70,13 @@
   margin-top: 50px;
   padding: 20px 40px;
   width: 50%;
-  transition: background-color all 0.3s;
+  background-color: #1db954;
+  border-width: 0;
+  border: none;
+  border-radius: 500px;
 }
 
-.btn-cta:hover,
-.btn-cta:active {
-  border: none;
+.btn-cta:hover {
   cursor: pointer;
-  background-color: #1db954;
+  background-color: #15883e;
 }
