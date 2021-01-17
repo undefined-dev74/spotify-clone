@@ -65,7 +65,6 @@ const Login = () => {
                 borderColor: '#ccc',
               }}
               className="btn"
-              href="#"
             >
               Continue with Phone Number
             </a>

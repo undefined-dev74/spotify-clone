@@ -31,7 +31,11 @@ function App() {
     console.log('THis is your token ', token);
   }, []);
 
-  return <div className="App">{token ? <Player /> : <Login />}</div>;
+  return (
+    <div className="App">
+      {token ? <Player spotify={spotify} /> : <Login />}
+    </div>
+  );
 }
 
 export default App;
