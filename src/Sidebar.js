@@ -5,9 +5,9 @@ import SidebarOption from './SidebarOption';
 
 const Sidebar = () => {
   const data = [
-    { options: 'Home', icon: Home },
-    { options: 'Search', icon: Search },
-    { options: 'Your Library', icon: LibraryMusic },
+    { options: 'Home', icon: Home, playList: 'Hip Hop' },
+    { options: 'Search', icon: Search, playList: 'Rock' },
+    { options: 'Your Library', icon: LibraryMusic, playList: 'Jazz' },
   ];
 
   return (
@@ -20,8 +20,12 @@ const Sidebar = () => {
       {data.map(({ options, icon }) => {
         return <SidebarOption title={options} Icon={icon} />;
       })}
+      <br />
       <strong className="sidebar__title">PLAYLIST</strong>
       <hr />
+      {data.map(({ playList }) => {
+        return <SidebarOption title={playList} />;
+      })}
     </div>
   );
 };
