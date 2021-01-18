@@ -1,13 +1,15 @@
 import { Home, LibraryMusic, Search } from '@material-ui/icons';
 import React from 'react';
+import { useDataLayerValue } from './DataLayer';
 import './Sidebar.css';
 import SidebarOption from './SidebarOption';
-
 const Sidebar = () => {
+  const [{ playlists }, dispatch] = useDataLayerValue();
+  console.log(playlists.items);
   const data = [
-    { options: 'Home', icon: Home, playList: 'Hip Hop' },
-    { options: 'Search', icon: Search, playList: 'Rock' },
-    { options: 'Your Library', icon: LibraryMusic, playList: 'Jazz' },
+    { options: 'Home', icon: Home },
+    { options: 'Search', icon: Search },
+    { options: 'Your Library', icon: LibraryMusic },
   ];
 
   return (
@@ -23,8 +25,9 @@ const Sidebar = () => {
       <br />
       <strong className="sidebar__title">PLAYLIST</strong>
       <hr />
-      {data.map(({ playList }) => {
-        return <SidebarOption title={playList} />;
+
+      {playlists?.items?.map(playlist => {
+        return <SidebarOption title={playlist} />;
       })}
     </div>
   );
