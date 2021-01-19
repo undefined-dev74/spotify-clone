@@ -5,6 +5,7 @@ import './Sidebar.css';
 import SidebarOption from './SidebarOption';
 const Sidebar = () => {
   const [{ playlists }, dispatch] = useDataLayerValue();
+  console.log(playlists);
   console.log(playlists.items);
   const data = [
     { options: 'Home', icon: Home },
@@ -27,7 +28,7 @@ const Sidebar = () => {
       <hr />
 
       {playlists?.items?.map(playlist => {
-        return <SidebarOption title={playlist} />;
+        return <SidebarOption title={playlist.name} />;
       })}
     </div>
   );
